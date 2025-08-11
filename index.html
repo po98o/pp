@@ -1,88 +1,194 @@
-<! DOCIYPE html>
-	<html>
-   <head>
-   	<title>DROPDOWN</title>
-   <meta charset="UTF-8" />
-      <link rel="stylesheet" type="text/css" href="style.css"> 
-   </head>
-   <body>
-   	<ul>
-   	<li><a href="#">STORE</a>
-<ul> 
-<li><a href="https://www.mediafire.com/file/m2eontxn4wb9ya8/Zuko_Store_v4.50_By_Drake.pkg/file" >ZUKO STORE</a></li>
-<li><a href="https://www.mediafire.com/file/msy6vh0ich5dyvv/PKGi_Store_v9.99_By_Drake.pkg/file" >PKGI</a></li>
-<li><a href="https://www.mediafire.com/file/u19205khym4i2vb/Wiki_Store_By_Drake.pkg/file" >WIKI STORE</a></li>
-<li><a href="https://www.mediafire.com/file/1f5b1l9awa6ah48/Video_Store_v2.50_By_Drake.pkg/file" >VIDEO STORE</a></li>
-<li><a href="https://www.mediafire.com/file/hu8rr3p9yu0jukv/Duck_Store_v1.80_By_Drake.pkg/file" >DUCK STORE</a></li>
-<li><a href="https://www.mediafire.com/file/8lm2yy72ixr9j8z/THANOS_12_Store_v1.00_By_Drake.pkg/file" >THANOS 12</a></li>
-<li><a href="https://www.mediafire.com/file/wds67o7dafml6t8/Fix_Stores_Hen_4.91_V4_By_Drake.pkg/file" >FIX STORE HEN</a></li>
-<li><a href="https://www.mediafire.com/file/l56v6quljv5j055/Fix_Stores_Evilnat_4.91_V5_By_Drake.pkg/file" >FIX STORE CFW</a></li>
-<li><a href="https://www.mediafire.com/file/a4litx02ijcg8u4/PS3_Games_License_By_Drake.pkg/file" >FIX Games</a></li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MAXROW PS3</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+  color: white;
+}
+
+/* خلفية مع تأثيرات خطوط */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 174, 255, 0.05) 0px,
+    rgba(255, 0, 255, 0.05) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  z-index: 0;
+}
+
+/* الشعار */
+header {
+  text-align: center;
+  padding: 20px;
+  background: radial-gradient(circle, rgba(0,174,255,0.15) 0%, transparent 70%);
+}
+header img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #0ff;
+  box-shadow: 0 0 20px rgba(0, 174, 255, 0.8), 0 0 40px rgba(255, 0, 255, 0.5);
+}
 
 
-</li>
-<ul>
-   <li><a href="#">PROGRAMS</a>
-   <ul>
- <li><a href="https://www.mediafire.com/file/2gp9pqwx7vpoq6n/multiMan_v4.84_HFW_By_Drake.pkg/file" >MultiMan HFW</a></li>
- <li><a href="https://www.mediafire.com/file/g48irkcstggqv0c/multiMan_v4.85_CFW_By_Drake.pkg/file" >MultiMan CFW</a></li>
-<li><a href="https://www.mediafire.com/file/1i0pl622i343tnr/webMAN_MOD_v1.47.46_By_Drake.pkg/file" >WebMan H/C</a></li>
-<li><a href="https://www.mediafire.com/file/yk5j7up1dzp2640/Apollo_Save_Tool_v2.00_By_Drake.pkg/file" >Apollo H/C</a></li>
- </ul>
- 
- 
- </li>
-   <li><a href="#">Trophi</a>
-<ul>
-<li><a href="https://www.mediafire.com/file/lmvrbxq5ribg5t0/PlayStation_III_Trophies_By_Drakr.zip/file" >trophi</a></li>
-</ul>
+/* القوائم */
+nav {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+}
+.menu {
+  display: inline-block;
+  background: rgba(30,30,30,0.9);
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 280px;
+  box-shadow: 0 0 10px rgba(0,174,255,0.5);
+}
+.menu > a {
+  display: block;
+  background: linear-gradient(90deg, #0ff, #f0f);
+  padding: 12px;
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+.menu > a:hover {
+  filter: brightness(1.2);
+}
+.submenu {
+  display: none;
+  background: rgba(20,20,20,0.9);
+}
+.submenu a {
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  color: #ccc;
+  text-decoration: none;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.submenu a:hover {
+  background: rgba(0,174,255,0.3);
+  color: white;
+}
+.menu.active .submenu {
+  display: block;
+}
+</style>
+</head>
+<body>
 
+<header>
+  <div class="logo-wrap">
+    <!-- غيّر مسار الصورة هنا -->
+    <img src="ss.png" alt="logo">
+  </div>
+</header>
 
+<nav>
+  <div class="menu">
+    <a>STORE</a>
+    <div class="submenu">
+      <a href="https://www.mediafire.com/file/m2eontxn4wb9ya8/Zuko_Store_v4.50_By_Drake.pkg/file">ZUKO STORE</a>
+      <a href="https://www.mediafire.com/file/msy6vh0ich5dyvv/PKGi_Store_v9.99_By_Drake.pkg/file">PKGI</a>
+      <a href="https://www.mediafire.com/file/u19205khym4i2vb/Wiki_Store_By_Drake.pkg/file">WIKI STORE</a>
+      <a href="https://www.mediafire.com/file/1f5b1l9awa6ah48/Video_Store_v2.50_By_Drake.pkg/file">VIDEO STORE</a>
+      <a href="https://www.mediafire.com/file/hu8rr3p9yu0jukv/Duck_Store_v1.80_By_Drake.pkg/file">DUCK STORE</a>
+      <a href="https://www.mediafire.com/file/8lm2yy72ixr9j8z/THANOS_12_Store_v1.00_By_Drake.pkg/file">THANOS 12</a>
+      <a href="https://www.mediafire.com/file/wds67o7dafml6t8/Fix_Stores_Hen_4.91_V4_By_Drake.pkg/file">FIX STORE HEN</a>
+      <a href="https://www.mediafire.com/file/l56v6quljv5j055/Fix_Stores_Evilnat_4.91_V5_By_Drake.pkg/file">FIX STORE CFW</a>
+      <a href="https://www.mediafire.com/file/a4litx02ijcg8u4/PS3_Games_License_By_Drake.pkg/file">FIX Games</a>
+    </div>
+  </div>
 
-</li>
-   <li><a href="#">Arabization</a>
-   <ul> 
-<li><a href="https://www.mediafire.com/file/awizeglu0kdto60/Arabic+full+ps3+hen+by+PS3+Legends.pkg/file" >Arabic PS3</a></li>
-<li><a href="https://www.mediafire.com/file/mq6y1ysjn7fgbnm/English+ps3+full+hen+4.91+by+PS3+Legends.pkg/file" >English PS3</a></li> 
-<li><a href="https://www.mediafire.com/file/lyhicfuvlrltp3e" >Arabic GTA5</a></li>
-<li class="baba" ><a href="https://www.mediafire.com/file/2hp81stgqv1vya7/SKUCONFIG.INI/file" >NFS:MW arabic(BULS)</a></li>
-</ul>
+  <div class="menu">
+    <a>PROGRAMS</a>
+    <div class="submenu">
+      <a href="https://www.mediafire.com/file/2gp9pqwx7vpoq6n/multiMan_v4.84_HFW_By_Drake.pkg/file">MultiMan HFW</a>
+      <a href="https://www.mediafire.com/file/g48irkcstggqv0c/multiMan_v4.85_CFW_By_Drake.pkg/file">MultiMan CFW</a>
+      <a href="https://www.mediafire.com/file/1i0pl622i343tnr/webMAN_MOD_v1.47.46_By_Drake.pkg/file">WebMan H/C</a>
+      <a href="https://www.mediafire.com/file/yk5j7up1dzp2640/Apollo_Save_Tool_v2.00_By_Drake.pkg/file">Apollo H/C</a>
+    </div>
+  </div>
 
+  <div class="menu">
+    <a>Trophi</a>
+    <div class="submenu">
+      <a href="https://www.mediafire.com/file/lmvrbxq5ribg5t0/PlayStation_III_Trophies_By_Drakr.zip/file">trophi</a>
+    </div>
+  </div>
 
-</li>
-   <li><a href="#">Developer</a>
-   <ul>
-   	<li><a href="https://t.me/ps3_a" >Telegram</a></li>
-   </ul>
-   
-   
-   </li>
-      <li><a href="#">MODS , DLC</a>
-   <ul >
-   	<li class="baba" ><a href="https://www.mediafire.com/file/wzja13yh3u8ymuo/James+reborn+Mod+Loader+v40.1+.zip/file" >M, V40.1 GTA5 54</a></li>
-      <li class="baba" ><a href="https://www.mediafire.com/file/q8ho13lj7xaunm2/James+reborn+Mod+Loader+v40.1.rar/file" >M, V40.1 GTA5 07</a></li>
-      <li class="baba" ><a href="#" >M, GTA4</a></li>
-      <li class="plp" ><a href="https://www.mediafire.com/file/gw10fnndeqt5ys0/DMT+1.12+HEN+Eboots.rar/file" >GTA5 ONLINE 1.12 HEN</a></li>
-            <li class="plp" ><a href="https://www.mediafire.com/file/snkdne7ohluu0pa/DMT+1.12+CFW+Eboots.rar/file" >GTA 5 ONLINE 1.12 CFW</a></li>
-       <li class="plp" ><a href="https://www.mediafire.com/file/qhcivn5d7pf1x19/EBOOT.BIN/file"> Resident Evil 4 mod Graphics</a></li>
-       <li><a href="https://www.mediafire.com/file/yuxpme4t7u8d17r/UNLOCKS.zip/file"> DLC NFS:MW</a></li>
-       	<li><a href="https://www.mediafire.com/file/p9edqsciwz0lyxk/GTA+SAN+ANDREAS+MOD+MENU+PART+2.pkg/file" >M, GTA SA</a></li> 
-      
-   </ul>
-   
-   
-   </li>
-         <li><a href="#">Games</a>
-   <ul>
-	<li><a href="PES2018.html" >PES 2018</a></li> 
-	<li><a href="PES2024.html" >PES 2024 (Patch) </a></li> 
-		<li><a href="DBRB.html" >DBRB 2</a></li> 
-			<li><a href="https://www.mediafire.com/file/x2q9o3r9td3w542/BLES00951-[DRIVER%20San%20Francisco].iso" >driver SF</a></li> 
-	<li><a href="https://www.mediafire.com/file/lpcmluiwn9z05cj/Espacy+-+Supersonic+Acrobatic+Rocket.pkg/file" >Rocket League</a></li> 
-		<li><a href="https://www.skzezo.com/2025/02/4-3-metal-gear-solid-4-ps3-arabic.html?m=1" >metal gear solid 4</a></li> 
-			<li><a href="https://www.mediafire.com/file/i78617zctnhla61/GTA+SAN+ANDREAS+MOD+MENU+PART+1.pkg/file" >GTA SA</a></li> 
-				<li><a href="https://www.mediafire.com/file/toywgb1flq90bgw/Driver+3+-+By+SKZEZO.pkg/file" >DRIVER 3</a></li> 
-   <section>
-   </body>
-   </html>
+  <div class="menu">
+    <a>Arabization</a>
+    <div class="submenu">
+      <a href="https://www.mediafire.com/file/awizeglu0kdto60/Arabic+full+ps3+hen+by+PS3+Legends.pkg/file">Arabic PS3</a>
+      <a href="https://www.mediafire.com/file/mq6y1ysjn7fgbnm/English+ps3+full+hen+4.91+by+PS3+Legends.pkg/file">English PS3</a>
+      <a href="https://www.mediafire.com/file/lyhicfuvlrltp3e">Arabic GTA5</a>
+      <a href="https://www.mediafire.com/file/2hp81stgqv1vya7/SKUCONFIG.INI/file">NFS:MW arabic(BULS)</a>
+    </div>
+  </div>
+
+  <div class="menu">
+    <a>Developer</a>
+    <div class="submenu">
+      <a href="https://t.me/ps3_a">Telegram</a>
+    </div>
+  </div>
+
+  <div class="menu">
+    <a>MODS , DLC</a>
+    <div class="submenu">
+      <a href="https://www.mediafire.com/file/wzja13yh3u8ymuo/James+reborn+Mod+Loader+v40.1+.zip/file">M, V40.1 GTA5 54</a>
+      <a href="https://www.mediafire.com/file/q8ho13lj7xaunm2/James+reborn+Mod+Loader+v40.1.rar/file">M, V40.1 GTA5 07</a>
+      <a href="#">M, GTA4</a>
+      <a href="https://www.mediafire.com/file/gw10fnndeqt5ys0/DMT+1.12+HEN+Eboots.rar/file">GTA5 ONLINE 1.12 HEN</a>
+      <a href="https://www.mediafire.com/file/snkdne7ohluu0pa/DMT+1.12+CFW+Eboots.rar/file">GTA 5 ONLINE 1.12 CFW</a>
+      <a href="https://www.mediafire.com/file/qhcivn5d7pf1x19/EBOOT.BIN/file">Resident Evil 4 mod Graphics</a>
+      <a href="https://www.mediafire.com/file/yuxpme4t7u8d17r/UNLOCKS.zip/file">DLC NFS:MW</a>
+      <a href="https://www.mediafire.com/file/p9edqsciwz0lyxk/GTA+SAN+ANDREAS+MOD+MENU+PART+2.pkg/file">M, GTA SA</a>
+    </div>
+  </div>
+
+  <div class="menu">
+    <a>Games</a>
+    <div class="submenu">
+      <a href="PES2018.html">PES 2018</a>
+      <a href="PES2024.html">PES 2024 (Patch)</a>
+      <a href="DBRB.html">DBRB 2</a>
+      <a href="https://www.mediafire.com/file/x2q9o3r9td3w542/BLES00951-[DRIVER%20San%20Francisco].iso">driver SF</a>
+            <a href="https://www.mediafire.com/file/toywgb1flq90bgw/Driver+3+-+By+SKZEZO.pkg/file">DRIVER 3</a>
+      <a href="https://www.mediafire.com/file/lpcmluiwn9z05cj/Espacy+-+Supersonic+Acrobatic+Rocket.pkg/file">Rocket League</a>
+      <a href="https://www.skzezo.com/2025/02/4-3-metal-gear-solid-4-ps3-arabic.html?m=1">metal gear solid 4</a>
+      <a href="https://www.mediafire.com/file/i78617zctnhla61/GTA+SAN+ANDREAS+MOD+MENU+PART+1.pkg/file">GTA SA</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+document.querySelectorAll('.menu > a').forEach(function(menuTitle) {
+  menuTitle.addEventListener('click', function() {
+    var parentMenu = this.parentElement;
+    parentMenu.classList.toggle('active');
+  });
+});
+</script>
+
+</body>
+</html>
