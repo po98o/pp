@@ -12,7 +12,6 @@ body {
   color: white;
 }
 
-/* خلفية مع تأثيرات خطوط */
 body::before {
   content: "";
   position: fixed;
@@ -43,7 +42,6 @@ header img {
   box-shadow: 0 0 20px rgba(0, 174, 255, 0.8), 0 0 40px rgba(255, 0, 255, 0.5);
 }
 
-
 /* القوائم */
 nav {
   z-index: 1;
@@ -72,9 +70,13 @@ nav {
 .menu > a:hover {
   filter: brightness(1.2);
 }
+
+/* حركة الانزلاق */
 .submenu {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
   background: rgba(20,20,20,0.9);
+  transition: max-height 0.5s ease-out;
 }
 .submenu a {
   display: block;
@@ -89,7 +91,8 @@ nav {
   color: white;
 }
 .menu.active .submenu {
-  display: block;
+  max-height: 1000px; /* يكفي لاحتواء الروابط */
+  transition: max-height 0.4s ease-in;
 }
 </style>
 </head>
@@ -97,7 +100,6 @@ nav {
 
 <header>
   <div class="logo-wrap">
-    <!-- غيّر مسار الصورة هنا -->
     <img src="ss.png" alt="logo">
   </div>
 </header>
@@ -173,10 +175,10 @@ nav {
       <a href="PES2024.html">PES 2024 (Patch)</a>
       <a href="DBRB.html">DBRB 2</a>
       <a href="https://www.mediafire.com/file/x2q9o3r9td3w542/BLES00951-[DRIVER%20San%20Francisco].iso">driver SF</a>
-            <a href="https://www.mediafire.com/file/toywgb1flq90bgw/Driver+3+-+By+SKZEZO.pkg/file">DRIVER 3</a>
       <a href="https://www.mediafire.com/file/lpcmluiwn9z05cj/Espacy+-+Supersonic+Acrobatic+Rocket.pkg/file">Rocket League</a>
       <a href="https://www.skzezo.com/2025/02/4-3-metal-gear-solid-4-ps3-arabic.html?m=1">metal gear solid 4</a>
       <a href="https://www.mediafire.com/file/i78617zctnhla61/GTA+SAN+ANDREAS+MOD+MENU+PART+1.pkg/file">GTA SA</a>
+      <a href="https://www.mediafire.com/file/toywgb1flq90bgw/Driver+3+-+By+SKZEZO.pkg/file">DRIVER 3</a>
     </div>
   </div>
 </nav>
@@ -184,8 +186,18 @@ nav {
 <script>
 document.querySelectorAll('.menu > a').forEach(function(menuTitle) {
   menuTitle.addEventListener('click', function() {
-    var parentMenu = this.parentElement;
-    parentMenu.classList.toggle('active');
+    const parentMenu = this.parentElement;
+    const isActive = parentMenu.classList.contains('active');
+    
+    // قفل كل القوائم
+    document.querySelectorAll('.menu').forEach(function(menu) {
+      menu.classList.remove('active');
+    });
+    
+    // إذا ما كان مفتوح افتحه
+    if (!isActive) {
+      parentMenu.classList.add('active');
+    }
   });
 });
 </script>
