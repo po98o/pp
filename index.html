@@ -2,111 +2,71 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MAXROW PS3</title>
+<title>PS3 Store</title>
 <style>
 body {
+  background-color: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
-  color: white;
 }
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: repeating-linear-gradient(
-    45deg,
-    rgba(0, 174, 255, 0.05) 0px,
-    rgba(255, 0, 255, 0.05) 2px,
-    transparent 2px,
-    transparent 4px
-  );
-  z-index: 0;
+h1 {
+  background: #222;
+  padding: 15px;
+  font-size: 28px;
+  margin: 0;
+  color: #00ffff;
 }
-
-/* الشعار */
-header {
-  text-align: center;
-  padding: 20px;
-  background: radial-gradient(circle, rgba(0,174,255,0.15) 0%, transparent 70%);
-}
-header img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #0ff;
-  box-shadow: 0 0 20px rgba(0, 174, 255, 0.8), 0 0 40px rgba(255, 0, 255, 0.5);
-}
-
-/* القوائم */
 nav {
-  z-index: 1;
-  position: relative;
-  text-align: center;
+  margin-top: 20px;
 }
 .menu {
   display: inline-block;
-  background: rgba(30,30,30,0.9);
+  background: #333;
   margin: 10px;
   border-radius: 10px;
   overflow: hidden;
-  width: 280px;
-  box-shadow: 0 0 10px rgba(0,174,255,0.5);
+  width: 300px;
 }
 .menu > a {
   display: block;
-  background: linear-gradient(90deg, #0ff, #f0f);
-  padding: 12px;
-  font-size: 18px;
-  color: black;
-  font-weight: bold;
+  background: #444;
+  padding: 15px;
+  font-size: 20px;
+  color: white;
   text-decoration: none;
   cursor: pointer;
 }
 .menu > a:hover {
-  filter: brightness(1.2);
+  background: #00aaff;
 }
-
-/* حركة الانزلاق */
 .submenu {
-  max-height: 0;
-  overflow: hidden;
-  background: rgba(20,20,20,0.9);
-  transition: max-height 0.5s ease-out;
+  display: none;
+  background: #222;
 }
 .submenu a {
   display: block;
   padding: 10px;
-  font-size: 16px;
+  font-size: 18px;
   color: #ccc;
   text-decoration: none;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid #333;
 }
 .submenu a:hover {
-  background: rgba(0,174,255,0.3);
+  background: #005577;
   color: white;
-}
-.menu.active .submenu {
-  max-height: 1000px; /* يكفي لاحتواء الروابط */
-  transition: max-height 0.4s ease-in;
 }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo-wrap">
-    <img src="ss.png" alt="logo">
-  </div>
-</header>
+<h1>MAXROW STORE</h1>
 
 <nav>
   <div class="menu">
-    <a>STORE</a>
+    <a onclick="toggleMenu(0)">STORE</a>
     <div class="submenu">
       <a href="https://www.mediafire.com/file/m2eontxn4wb9ya8/Zuko_Store_v4.50_By_Drake.pkg/file">ZUKO STORE</a>
       <a href="https://www.mediafire.com/file/msy6vh0ich5dyvv/PKGi_Store_v9.99_By_Drake.pkg/file">PKGI</a>
@@ -121,7 +81,7 @@ nav {
   </div>
 
   <div class="menu">
-    <a>PROGRAMS</a>
+    <a onclick="toggleMenu(1)">PROGRAMS</a>
     <div class="submenu">
       <a href="https://www.mediafire.com/file/2gp9pqwx7vpoq6n/multiMan_v4.84_HFW_By_Drake.pkg/file">MultiMan HFW</a>
       <a href="https://www.mediafire.com/file/g48irkcstggqv0c/multiMan_v4.85_CFW_By_Drake.pkg/file">MultiMan CFW</a>
@@ -131,14 +91,14 @@ nav {
   </div>
 
   <div class="menu">
-    <a>Trophi</a>
+    <a onclick="toggleMenu(2)">Trophi</a>
     <div class="submenu">
       <a href="https://www.mediafire.com/file/lmvrbxq5ribg5t0/PlayStation_III_Trophies_By_Drakr.zip/file">trophi</a>
     </div>
   </div>
 
   <div class="menu">
-    <a>Arabization</a>
+    <a onclick="toggleMenu(3)">Arabization</a>
     <div class="submenu">
       <a href="https://www.mediafire.com/file/awizeglu0kdto60/Arabic+full+ps3+hen+by+PS3+Legends.pkg/file">Arabic PS3</a>
       <a href="https://www.mediafire.com/file/mq6y1ysjn7fgbnm/English+ps3+full+hen+4.91+by+PS3+Legends.pkg/file">English PS3</a>
@@ -148,14 +108,14 @@ nav {
   </div>
 
   <div class="menu">
-    <a>Developer</a>
+    <a onclick="toggleMenu(4)">Developer</a>
     <div class="submenu">
       <a href="https://t.me/ps3_a">Telegram</a>
     </div>
   </div>
 
   <div class="menu">
-    <a>MODS , DLC</a>
+    <a onclick="toggleMenu(5)">MODS , DLC</a>
     <div class="submenu">
       <a href="https://www.mediafire.com/file/wzja13yh3u8ymuo/James+reborn+Mod+Loader+v40.1+.zip/file">M, V40.1 GTA5 54</a>
       <a href="https://www.mediafire.com/file/q8ho13lj7xaunm2/James+reborn+Mod+Loader+v40.1.rar/file">M, V40.1 GTA5 07</a>
@@ -169,7 +129,7 @@ nav {
   </div>
 
   <div class="menu">
-    <a>Games</a>
+    <a onclick="toggleMenu(6)">Games</a>
     <div class="submenu">
       <a href="PES2018.html">PES 2018</a>
       <a href="PES2024.html">PES 2024 (Patch)</a>
@@ -181,25 +141,21 @@ nav {
       <a href="https://www.mediafire.com/file/toywgb1flq90bgw/Driver+3+-+By+SKZEZO.pkg/file">DRIVER 3</a>
     </div>
   </div>
+
 </nav>
 
 <script>
-document.querySelectorAll('.menu > a').forEach(function(menuTitle) {
-  menuTitle.addEventListener('click', function() {
-    const parentMenu = this.parentElement;
-    const isActive = parentMenu.classList.contains('active');
-    
-    // قفل كل القوائم
-    document.querySelectorAll('.menu').forEach(function(menu) {
-      menu.classList.remove('active');
-    });
-    
-    // إذا ما كان مفتوح افتحه
-    if (!isActive) {
-      parentMenu.classList.add('active');
+var menus = document.getElementsByClassName("submenu");
+
+function toggleMenu(i) {
+  for (var x = 0; x < menus.length; x++) {
+    if (x === i) {
+      menus[x].style.display = menus[x].style.display === "block" ? "none" : "block";
+    } else {
+      menus[x].style.display = "none";
     }
-  });
-});
+  }
+}
 </script>
 
 </body>
