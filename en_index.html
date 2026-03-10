@@ -31,26 +31,16 @@ nav {
   width: 300px;
 }
 .menu > a {
-  /* تعديل التنسيق لتوسيط الصورة */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   background: #444;
-  padding: 0; 
+  padding: 15px;
+  font-size: 20px;
   color: white;
   text-decoration: none;
   cursor: pointer;
-  height: 60px; 
 }
 .menu > a:hover {
   background: #00aaff;
-}
-
-/* تنسيق الصورة داخل الزر */
-.menu > a img {
-  max-width: 90%; 
-  height: auto;
-  display: block;
 }
 
 .submenu {
@@ -70,7 +60,7 @@ nav {
   color: white;
 }
 
-/* تنسيق زر اللغة المضاف */
+/* تنسيق زر اللغة */
 .lang-section {
   margin: 30px 0;
   clear: both;
@@ -105,7 +95,7 @@ nav {
 
 <nav>
   <div class="menu">
-    <a onclick="toggleMenu(0)"><img src="المتاجر.png" alt="STORE"></a>
+    <a onclick="toggleMenu(0)">STORE</a>
     <div class="submenu">
       <a href="https://www.mediafire.com/file/beeheffny1zfz94/ZukoStore_v4.7_HFW.pkg/file">ZUKO STORE</a>
       <a href="https://www.mediafire.com/file/msy6vh0ich5dyvv/PKGi_Store_v1.24_By_Drake.pkg/file">PKGI</a>
@@ -124,7 +114,7 @@ nav {
   </div>
 
   <div class="menu">
-    <a onclick="toggleMenu(1)"><img src="المطور.png" alt="PROGRAMS"></a>
+    <a onclick="toggleMenu(1)">PROGRAMS</a>
     <div class="submenu">
       <a href="https://www.mediafire.com/file/2gp9pqwx7vpoq6n/multiMan_v4.84_HFW_By_Drake.pkg/file">MultiMan HFW</a>
       <a href="https://www.mediafire.com/file/g48irkcstggqv0c/multiMan_v4.85_CFW_By_Drake.pkg/file">MultiMan CFW</a>
@@ -138,14 +128,14 @@ nav {
   </div>
 
   <div class="menu">
-    <a onclick="toggleMenu(2)"><img src="الجوائز.png" alt="Trophi"></a>
+    <a onclick="toggleMenu(2)">Trophi</a>
     <div class="submenu">
       <a href="https://www.mediafire.com/file/lmvrbxq5ribg5t0/PlayStation_III_Trophies_By_Drakr.zip/file">trophi</a>
     </div>
   </div>
 
   <div class="menu">
-    <a onclick="toggleMenu(3)"><img src="التعريب.png" alt="Arabization"></a>
+    <a onclick="toggleMenu(3)">Arabization</a>
     <div class="submenu">
       <a href="https://www.mediafire.com/file/yd93s12776g9jpf/PS3_AR_by_DARK_SPACE_%2528HEN%2529__1.03.pkg/file">Arabic PS3 HEN</a>
       <a href="https://www.mediafire.com/file/yd93s12776g9jpf/PS3_AR_by_DARK_SPACE_%2528HEN%2529__1.03.pkg/file">Arabic PS3 CFW</a>
@@ -156,14 +146,14 @@ nav {
   </div>
 
   <div class="menu">
-    <a onclick="toggleMenu(4)"><img src="المطور.png" alt="Developer"></a>
+    <a onclick="toggleMenu(4)">Developer</a>
     <div class="submenu">
       <a href="https://t.me/ps3_a">Telegram</a>
     </div>
   </div>
 
   <div class="menu">
-    <a onclick="toggleMenu(5)"><img src="المودات.png" alt="MODS , DLC"></a>
+    <a onclick="toggleMenu(5)">MODS , DLC</a>
     <div class="submenu">
       <a href="https://www.mediafire.com/file/wzja13yh3u8ymuo/James+reborn+Mod+Loader+v40.1+.zip/file">M, V40.1 GTA5 54</a>
       <a href="https://www.mediafire.com/file/q8ho13lj7xaunm2/James+reborn+Mod+Loader+v40.1.rar/file">M, V40.1 GTA5 07</a>
@@ -177,7 +167,7 @@ nav {
   </div>
 
   <div class="menu">
-    <a onclick="toggleMenu(6)"><img src="الالعاب.png" alt="Games"></a>
+    <a onclick="toggleMenu(6)">Games</a>
     <div class="submenu">
       <a href="PES2018.html">PES 2018</a>
       <a href="PES2024.html">PES 2024 (Patch)</a>
@@ -196,7 +186,7 @@ nav {
 </nav>
 
 <div class="lang-section">
-    <a href="en_index.html" class="lang-btn">English</a>
+    <a href="index.html" class="lang-btn">Arabic</a>
 </div>
 
 <script>
