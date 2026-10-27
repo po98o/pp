@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تجهيز التحميل</title>
     
-    <!-- فحص PS3 بطريقة متوافقة 100% مع متصفح السوني القديم -->
+    <!-- فحص PS3 والتحويل المباشر -->
     <script>
         var ua = navigator.userAgent.toLowerCase();
         if (ua.indexOf('playstation 3') !== -1 || ua.indexOf('ps3') !== -1) {
@@ -16,7 +16,7 @@
         }
     </script>
 
-    <!-- كود إعلان Popunder (للجوال والكمبيوتر فقط) -->
+    <!-- كود إعلان Popunder -->
     <script data-cfasync="false" src="https://abscloud.org/1/717617263390869e3522f6b247e925b4"></script>
 
     <style>
@@ -36,51 +36,24 @@
             max-width: 420px;
             padding: 20px;
         }
-        h1 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        p {
-            color: #94a3b8;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
+        h1 { font-size: 20px; margin-bottom: 10px; font-weight: 600; }
+        p { color: #94a3b8; font-size: 14px; margin-bottom: 20px; }
         .counter-circle {
-            width: 70px;
-            height: 70px;
-            border: 4px solid #3b82f6;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px auto;
-            font-size: 24px;
-            font-weight: bold;
-            color: #60a5fa;
-            background: rgba(59, 130, 246, 0.05);
+            width: 70px; height: 70px;
+            border: 4px solid #3b82f6; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px auto; font-size: 24px; font-weight: bold;
+            color: #60a5fa; background: rgba(59, 130, 246, 0.05);
         }
         .btn-dl {
             display: none;
-            background: #2563eb;
-            color: white;
-            padding: 14px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: background 0.2s;
-            width: 100%;
+            background: #2563eb; color: white;
+            padding: 14px 20px; border-radius: 8px;
+            text-decoration: none; font-weight: 600; font-size: 15px;
+            width: 100%; border: none; cursor: pointer;
         }
-        .btn-dl:hover {
-            background: #1d4ed8;
-        }
-        .ad-space {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            overflow: hidden;
-        }
+        .btn-dl:hover { background: #1d4ed8; }
+        .ad-space { margin-top: 20px; display: flex; justify-content: center; overflow: hidden; }
     </style>
 </head>
 <body>
@@ -91,8 +64,8 @@
         
         <div class="counter-circle" id="countdown">10</div>
 
-        <!-- زر التحميل للجوال والكمبيوتر -->
-        <a href="#" id="actionBtn" class="btn-dl" target="_blank">تحميل الملف الآن</a>
+        <!-- زر التحميل -->
+        <button id="actionBtn" class="btn-dl">تحميل الملف الآن</button>
 
         <!-- مكان إعلان البانر (300x250) -->
         <div class="ad-space">
@@ -110,16 +83,21 @@
     </div>
 
     <script>
-        // استخراج الرابط بالطريقة القديمة المتوافقة مع المتصفحات القديمة
+        // استخراج الرابط
         var match = location.search.match(/file=([^&]*)/);
         var targetUrl = match ? decodeURIComponent(match[1]) : '';
         var actionBtn = document.getElementById('actionBtn');
 
-        if (targetUrl) {
-            actionBtn.href = targetUrl;
-        }
+        // معالجة الضغطة بشكل برمجي يمنع مشكلة الضغطتين
+        actionBtn.onclick = function() {
+            if (targetUrl) {
+                window.open(targetUrl, '_blank');
+            } else {
+                alert("خطأ: رابط الملف غير موجود!");
+            }
+        };
 
-        // عداد الـ 10 ثوانٍ للجوال والكمبيوتر
+        // عداد الـ 10 ثوانٍ
         var t = 10;
         var el = document.getElementById('countdown');
         
