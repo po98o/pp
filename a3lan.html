@@ -5,19 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تجهيز التحميل</title>
     
-    <!-- فحص جهاز الـ PS3 والتحويل المباشر فوراً بدون إعلانات أو انتظار -->
+    <!-- فحص PS3 بطريقة متوافقة 100% مع متصفح السوني القديم -->
     <script>
-        const userAgent = navigator.userAgent;
-        if (userAgent.includes('PLAYSTATION 3') || userAgent.includes('PS3')) {
-            const urlParams = new URLSearchParams(window.location.search);
-            const directFile = urlParams.get('file');
-            if (directFile) {
-                window.location.href = directFile;
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf('playstation 3') !== -1 || ua.indexOf('ps3') !== -1) {
+            var match = location.search.match(/file=([^&]*)/);
+            if (match && match[1]) {
+                window.location.href = decodeURIComponent(match[1]);
             }
         }
     </script>
 
-    <!-- كود إعلان Popunder الخاص بـ Adsterra -->
+    <!-- كود إعلان Popunder (للجوال والكمبيوتر فقط) -->
     <script data-cfasync="false" src="https://abscloud.org/1/717617263390869e3522f6b247e925b4"></script>
 
     <style>
@@ -92,7 +91,7 @@
         
         <div class="counter-circle" id="countdown">10</div>
 
-        <!-- زر التحميل للجوال والكمبيوتر (يسحب الرابط تلقائياً من القائمة) -->
+        <!-- زر التحميل للجوال والكمبيوتر -->
         <a href="#" id="actionBtn" class="btn-dl" target="_blank">تحميل الملف الآن</a>
 
         <!-- مكان إعلان البانر (300x250) -->
@@ -111,20 +110,20 @@
     </div>
 
     <script>
-        // التقاط رابط الملف من الرابط (URL) وإعطاؤه لزر التحميل للجوال والكمبيوتر
-        const urlParams = new URLSearchParams(window.location.search);
-        const targetUrl = urlParams.get('file');
-        const actionBtn = document.getElementById('actionBtn');
+        // استخراج الرابط بالطريقة القديمة المتوافقة مع المتصفحات القديمة
+        var match = location.search.match(/file=([^&]*)/);
+        var targetUrl = match ? decodeURIComponent(match[1]) : '';
+        var actionBtn = document.getElementById('actionBtn');
 
         if (targetUrl) {
             actionBtn.href = targetUrl;
         }
 
         // عداد الـ 10 ثوانٍ للجوال والكمبيوتر
-        let t = 10;
-        const el = document.getElementById('countdown');
+        var t = 10;
+        var el = document.getElementById('countdown');
         
-        const x = setInterval(() => {
+        var x = setInterval(function() {
             t--;
             el.textContent = t;
             if (t <= 0) {
